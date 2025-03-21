@@ -1,6 +1,7 @@
 
 import React, { useEffect, useRef } from "react";
 import { ArrowRight, Play } from "lucide-react";
+import AuroraLogo from "./AuroraLogo";
 
 const HeroSection = () => {
   const titleRef = useRef<HTMLHeadingElement>(null);
@@ -91,39 +92,29 @@ const HeroSection = () => {
               <span className="relative z-10 font-medium">Generate My Presentation</span>
               <ArrowRight className="relative z-10 ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
             </button>
-            <button className="flex items-center px-8 py-4 border border-aurora-blue text-aurora-text rounded-full hover:border-aurora-primary/30 hover:bg-aurora-blue/5 transition-all duration-300 w-full sm:w-auto">
-              <Play className="w-4 h-4 mr-2" />
-              <span className="font-medium">Watch It In Action</span>
+            
+            {/* Enhanced "Watch It In Action" button */}
+            <button className="group flex items-center px-8 py-4 bg-transparent border border-aurora-blue/60 text-aurora-text rounded-full hover:border-aurora-primary/70 hover:bg-aurora-blue/10 transition-all duration-300 w-full sm:w-auto relative overflow-hidden">
+              <span className="absolute inset-0 w-full h-full bg-gradient-to-r from-aurora-blue/0 via-aurora-accent/5 to-aurora-blue/0 opacity-0 group-hover:opacity-100 animate-aurora"></span>
+              <div className="relative z-10 flex items-center justify-center">
+                <div className="mr-3 bg-aurora-primary/90 rounded-full p-1.5 group-hover:bg-aurora-accent transition-colors duration-300">
+                  <Play className="w-3.5 h-3.5" fill="white" />
+                </div>
+                <span className="font-medium relative">
+                  Watch It In Action
+                  <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-aurora-primary group-hover:w-full transition-all duration-300"></span>
+                </span>
+              </div>
             </button>
           </div>
         </div>
 
-        {/* Preview mockup */}
-        <div className="mt-16 md:mt-24 relative mx-auto max-w-5xl opacity-0 animate-fadeIn" style={{ animationDelay: "900ms" }}>
-          <div className="rounded-xl overflow-hidden shadow-2xl border border-white/10 aspect-video bg-gradient-to-br from-aurora-background/90 to-aurora-dark/90 backdrop-blur-md">
-            <div className="relative h-full">
-              {/* Preview Content */}
-              <div className="flex items-center justify-center h-full p-6">
-                <div className="text-center">
-                  <div className="inline-block mb-6 animate-pulse">
-                    <div className="bg-aurora-primary/20 border border-aurora-primary/30 text-aurora-text px-4 py-2 rounded-lg font-medium">Creating your presentation...</div>
-                  </div>
-                  <div className="w-full max-w-md mx-auto h-6 bg-aurora-secondary/30 rounded-full overflow-hidden">
-                    <div 
-                      className="h-full bg-gradient-to-r from-aurora-primary to-aurora-accent animate-shimmer"
-                      style={{
-                        width: "60%",
-                        backgroundSize: "200% 100%",
-                      }}
-                    ></div>
-                  </div>
-                </div>
-              </div>
-            </div>
+        {/* Large Aurora Logo Display */}
+        <div className="mt-16 md:mt-24 flex justify-center mx-auto opacity-0 animate-fadeIn" style={{ animationDelay: "900ms" }}>
+          <div className="relative">
+            <AuroraLogo className="w-60 h-60 md:w-80 md:h-80" />
+            <div className="absolute inset-0 bg-gradient-to-r from-aurora-blue/0 via-aurora-primary/10 to-aurora-accent/0 rounded-full blur-xl animate-pulse"></div>
           </div>
-          
-          {/* Decorative highlights */}
-          <div className="absolute -top-4 -bottom-4 -left-4 -right-4 bg-gradient-to-r from-aurora-blue/0 via-aurora-primary/10 to-aurora-accent/0 rounded-2xl blur-xl -z-10"></div>
         </div>
       </div>
     </section>

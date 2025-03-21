@@ -2,6 +2,7 @@
 import React, { useState, useEffect } from "react";
 import { Globe, Menu, X } from "lucide-react";
 import { cn } from "@/lib/utils";
+import AuroraLogo from "./AuroraLogo";
 
 const Header = () => {
   const [scrolled, setScrolled] = useState(false);
@@ -34,7 +35,10 @@ const Header = () => {
         {/* Logo */}
         <a href="/" className="transition-transform hover:scale-105 relative group">
           <div className="absolute -inset-1 bg-gradient-to-r from-aurora-primary to-aurora-blue rounded-full blur opacity-0 group-hover:opacity-30 transition duration-300"></div>
-          <img src="/aurora-logo.svg" alt="Aurora" className="h-10 relative z-10" />
+          <div className="flex items-center relative z-10">
+            <AuroraLogo className="h-8 w-8 mr-2" />
+            <span className="text-aurora-text font-bold text-xl tracking-wider">AURORA</span>
+          </div>
         </a>
 
         {/* Desktop Navigation */}
