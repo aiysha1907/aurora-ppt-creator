@@ -20,14 +20,14 @@ export default {
     },
     extend: {
       colors: {
-        // Aurora theme colors
+        // Updated Aurora theme colors based on user's preferences
         aurora: {
-          background: "#0D1B2A",
-          secondary: "#1B263B",
-          green: "#14FFEC",
-          blue: "#00A8E8",
-          purple: "#6A0572",
-          text: "#E0E1DD",
+          background: "#FFFFFF", // White uniform background
+          secondary: "#F8F8F8", // Slight off-white for subtle contrast
+          primary: "#FF5757",   // Reddish primary color
+          blue: "#7EB6FF",      // Light blue secondary color
+          accent: "#5271FF",    // Deeper blue accent
+          dark: "#2D2D2D",      // Dark text color
         },
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
@@ -124,3 +124,4 @@ export default {
   },
   plugins: [require("tailwindcss-animate")],
 } satisfies Config;
+

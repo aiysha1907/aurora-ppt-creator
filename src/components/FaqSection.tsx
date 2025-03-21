@@ -44,34 +44,34 @@ const FaqSection = () => {
 
   const faqs = [
     {
-      question: "How does Aurora create presentations?",
+      question: "How does Aurora create presentations so quickly?",
       answer:
-        "Aurora uses advanced AI technology to understand your prompt and generate tailored presentation content and design. It analyzes the context, creates an outline, writes compelling content, and applies professional design principles to produce complete presentations instantly.",
+        "Aurora's breakthrough AI analyzes your prompt, understands the context, and builds a presentation structure in milliseconds. It then crafts each slide with intelligent design principles, creating professional-quality content that feels handcrafted but happens at the speed of thought.",
     },
     {
-      question: "Can I edit the presentations after they're generated?",
+      question: "Can I customize the presentations after they're created?",
       answer:
-        "Absolutely! You have full editing capabilities for all presentations created with Aurora. You can modify text, rearrange slides, change designs, add or remove elements, and customize every aspect to match your exact requirements.",
+        "Absolutely! Every element is fully editable. Change colors, layouts, fonts, images—anything you can imagine. Aurora gives you the perfect starting point, then puts you in complete control of the final result. It's the best of both worlds: AI speed with human creativity.",
     },
     {
-      question: "What file formats can I export my presentations in?",
+      question: "What kind of presentations can Aurora handle?",
       answer:
-        "Aurora supports multiple export formats including PowerPoint (.pptx), PDF, Google Slides, and direct presentation mode. This ensures compatibility with virtually any presentation environment.",
-    },
-    {
-      question: "Is my content secure and private?",
-      answer:
-        "Yes, we take data security very seriously. All your content is encrypted, and we don't store your presentation content longer than necessary for processing. Our privacy policy ensures your data is never shared or used for training without explicit permission.",
-    },
-    {
-      question: "How many presentations can I create with the free plan?",
-      answer:
-        "The free plan allows you to create up to 3 presentations per month. Each presentation can have up to 10 slides. This gives you a chance to experience Aurora's capabilities before committing to a paid plan.",
+        "From business pitches to educational content, product launches to research presentations—Aurora handles it all with equal brilliance. Our AI has been trained on thousands of professional presentations across industries, ensuring whatever you need is just a prompt away.",
     },
     {
       question: "Do I need design skills to use Aurora?",
       answer:
-        "Not at all! That's the beauty of Aurora. You simply provide the topic or content idea, and our AI handles all design aspects. Of course, if you have specific design preferences, you can guide the AI with more detailed prompts or edit the results.",
+        "Not at all! That's the beauty of Aurora. You bring the ideas, we handle the design. Of course, if you do have design preferences, Aurora can adapt to your direction. It's perfect for both design novices looking for excellence and professionals seeking efficiency.",
+    },
+    {
+      question: "How does pricing work?",
+      answer:
+        "We offer a range of plans starting at just $10/month for individual creators. Our professional and team plans include additional features like brand kit integration, expanded slide counts, and collaboration tools. All plans start with a 7-day free trial, no credit card required.",
+    },
+    {
+      question: "Is my content secure and private?",
+      answer:
+        "Your privacy is paramount. Aurora employs end-to-end encryption for all content, and we never use your presentations to train our models without explicit permission. Your brilliant ideas remain yours alone, with enterprise-grade security protecting every presentation you create.",
     },
   ];
 
@@ -79,23 +79,23 @@ const FaqSection = () => {
     <section
       id="faq"
       ref={sectionRef}
-      className="section bg-aurora-secondary/30 relative overflow-hidden"
+      className="py-24 px-6 md:px-12 lg:px-24 relative overflow-hidden bg-aurora-background"
     >
       <div className="max-w-4xl mx-auto relative z-10">
         <div className="text-center mb-16">
-          <h2 ref={titleRef} className="heading-lg mb-6 opacity-0">
-            Frequently Asked <span className="text-aurora-blue">Questions</span>
+          <h2 ref={titleRef} className="text-4xl md:text-5xl font-bold mb-6 opacity-0 text-aurora-dark">
+            Questions You Might <span className="text-aurora-primary">Have</span>
           </h2>
         </div>
         
         <div ref={accordionRef} className="opacity-0">
           <Accordion type="single" collapsible className="space-y-4">
             {faqs.map((faq, index) => (
-              <AccordionItem key={index} value={`item-${index}`} className="glass-card rounded-xl overflow-hidden border-none">
-                <AccordionTrigger className="px-6 py-4 hover:no-underline hover:bg-white/5 transition-colors">
-                  <span className="text-left font-medium text-lg">{faq.question}</span>
+              <AccordionItem key={index} value={`item-${index}`} className="rounded-xl overflow-hidden border border-aurora-dark/10 bg-white shadow-sm">
+                <AccordionTrigger className="px-6 py-4 hover:no-underline hover:bg-aurora-secondary/30 transition-colors">
+                  <span className="text-left font-medium text-lg text-aurora-dark">{faq.question}</span>
                 </AccordionTrigger>
-                <AccordionContent className="px-6 pb-4 pt-2 text-aurora-text/80">
+                <AccordionContent className="px-6 pb-4 pt-2 text-aurora-dark/70">
                   {faq.answer}
                 </AccordionContent>
               </AccordionItem>
@@ -104,10 +104,10 @@ const FaqSection = () => {
         </div>
         
         <div className="mt-16 text-center opacity-0 animate-fadeIn" style={{ animationDelay: "600ms" }}>
-          <p className="text-aurora-text/80 mb-6">
-            Still have questions? We're here to help.
+          <p className="text-aurora-dark/70 mb-6">
+            Still have questions? We'd love to help.
           </p>
-          <button className="btn-ghost">
+          <button className="px-8 py-4 border border-aurora-dark/10 text-aurora-dark rounded-full hover:border-aurora-primary/20 hover:bg-aurora-primary/5 transition-all duration-300">
             Contact Support
           </button>
         </div>
