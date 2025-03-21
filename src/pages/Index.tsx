@@ -26,10 +26,17 @@ const Index = () => {
         });
       });
     });
+    
+    // Set body background to black
+    document.body.classList.add('bg-black');
+    
+    return () => {
+      document.body.classList.remove('bg-black');
+    };
   }, []);
 
   return (
-    <div className="flex flex-col min-h-screen">
+    <div className="flex flex-col min-h-screen bg-aurora-background">
       <Header />
       
       <main>

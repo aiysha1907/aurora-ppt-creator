@@ -1,4 +1,3 @@
-
 import type { Config } from "tailwindcss";
 
 export default {
@@ -20,15 +19,15 @@ export default {
     },
     extend: {
       colors: {
-        // Updated Aurora theme colors based on user's provided hex codes
         aurora: {
-          background: "#0d1070", // Darkest blue for background
-          secondary: "#0d2c78", // Secondary dark blue
-          primary: "#FF5757",   // Keeping reddish primary color
-          blue: "#15677d",      // Medium blue
-          accent: "#0e7172",    // Teal accent
-          dark: "#133f62",      // Dark blue text color
-          text: "#FFFFFF",      // White text for dark backgrounds
+          background: "#000000",
+          secondary: "#0d2c78",
+          primary: "#FF5757",
+          blue: "#15677d",
+          accent: "#0e7172",
+          dark: "#133f62",
+          text: "#FFFFFF",
+          light: "#F5F5F5",
         },
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
@@ -119,6 +118,16 @@ export default {
           "0%": { opacity: "0", transform: "translate(-50%, -50%) scale(0.5)" },
           "100%": { opacity: "1", transform: "translate(-50%, -50%) scale(1)" },
         },
+        "text-gradient": {
+          "0%, 100%": {
+            "background-size": "200% 200%",
+            "background-position": "left center",
+          },
+          "50%": {
+            "background-size": "200% 200%",
+            "background-position": "right center",
+          },
+        },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
@@ -130,6 +139,7 @@ export default {
         aurora: "aurora 15s ease infinite",
         pulse: "pulse 3s ease-in-out infinite",
         spotlight: "spotlight 2s ease-in-out forwards",
+        "text-gradient": "text-gradient 3s ease infinite",
       },
     },
   },
