@@ -118,7 +118,7 @@ export default {
         glow: "glow 3s ease-in-out infinite",
         fadeIn: "fadeIn 0.8s ease-out forwards",
         shimmer: "shimmer 2s linear infinite",
-        aurora: "aurora
+        aurora: "aurora 15s ease infinite"
       },
     },
   },
