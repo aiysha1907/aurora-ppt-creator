@@ -20,14 +20,15 @@ export default {
     },
     extend: {
       colors: {
-        // Updated Aurora theme colors based on user's preferences
+        // Updated Aurora theme colors based on user's provided hex codes
         aurora: {
-          background: "#FFFFFF", // White uniform background
-          secondary: "#F8F8F8", // Slight off-white for subtle contrast
-          primary: "#FF5757",   // Reddish primary color
-          blue: "#7EB6FF",      // Light blue secondary color
-          accent: "#5271FF",    // Deeper blue accent
-          dark: "#2D2D2D",      // Dark text color
+          background: "#0d1070", // Darkest blue for background
+          secondary: "#0d2c78", // Secondary dark blue
+          primary: "#FF5757",   // Keeping reddish primary color
+          blue: "#15677d",      // Medium blue
+          accent: "#0e7172",    // Teal accent
+          dark: "#133f62",      // Dark blue text color
+          text: "#FFFFFF",      // White text for dark backgrounds
         },
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
@@ -110,6 +111,14 @@ export default {
           "0%, 100%": { backgroundPosition: "0% 50%" },
           "50%": { backgroundPosition: "100% 50%" },
         },
+        pulse: {
+          "0%, 100%": { transform: "scale(1)" },
+          "50%": { transform: "scale(1.05)" },
+        },
+        spotlight: {
+          "0%": { opacity: "0", transform: "translate(-50%, -50%) scale(0.5)" },
+          "100%": { opacity: "1", transform: "translate(-50%, -50%) scale(1)" },
+        },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
@@ -118,10 +127,11 @@ export default {
         glow: "glow 3s ease-in-out infinite",
         fadeIn: "fadeIn 0.8s ease-out forwards",
         shimmer: "shimmer 2s linear infinite",
-        aurora: "aurora 15s ease infinite"
+        aurora: "aurora 15s ease infinite",
+        pulse: "pulse 3s ease-in-out infinite",
+        spotlight: "spotlight 2s ease-in-out forwards",
       },
     },
   },
   plugins: [require("tailwindcss-animate")],
 } satisfies Config;
-

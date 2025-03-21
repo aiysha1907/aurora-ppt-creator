@@ -93,16 +93,20 @@
   }
 
   body {
-    @apply bg-aurora-background text-aurora-dark font-montserrat antialiased;
+    @apply bg-aurora-background text-aurora-text font-montserrat antialiased;
   }
 
   /* Button styles */
   .btn-primary {
-    @apply bg-aurora-primary text-white font-medium rounded-full px-6 py-3 hover:bg-aurora-primary/90 transition-all duration-300 shadow-md hover:shadow-xl;
+    @apply bg-aurora-primary text-white font-medium rounded-full px-6 py-3 hover:bg-aurora-primary/90 transition-all duration-300 shadow-lg hover:shadow-xl relative overflow-hidden;
+  }
+  
+  .btn-primary::before {
+    @apply content-[''] absolute top-0 left-0 w-full h-full bg-gradient-to-r from-aurora-primary via-aurora-accent to-aurora-blue opacity-0 hover:opacity-30 transition-opacity duration-300;
   }
 
   .btn-ghost {
-    @apply bg-transparent border border-aurora-dark/20 text-aurora-dark font-medium rounded-full px-6 py-3 hover:bg-aurora-primary/5 hover:border-aurora-primary/20 transition-all duration-300;
+    @apply bg-transparent border border-aurora-text/20 text-aurora-text font-medium rounded-full px-6 py-3 hover:bg-white/5 hover:border-aurora-primary/30 transition-all duration-300;
   }
 
   /* Section spacing */
@@ -122,6 +126,86 @@
   .heading-md {
     @apply text-2xl md:text-3xl font-semibold;
   }
+  
+  /* Gradient effects */
+  .gradient-text {
+    @apply bg-gradient-to-r from-aurora-primary via-aurora-accent to-aurora-blue bg-clip-text text-transparent;
+  }
+  
+  .gradient-bg {
+    @apply bg-gradient-to-br from-aurora-background via-aurora-secondary to-aurora-dark;
+  }
+  
+  /* Aurora animated background */
+  .aurora-glow {
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .aurora-glow::before {
+    content: "";
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(
+      circle,
+      rgba(21, 103, 125, 0.1) 0%,
+      rgba(14, 113, 114, 0.1) 25%,
+      rgba(13, 44, 120, 0.1) 50%,
+      rgba(13, 16, 112, 0.05) 75%,
+      transparent 100%
+    );
+    animation: aurora 15s linear infinite;
+    opacity: 0.3;
+    z-index: 0;
+  }
+  
+  /* Card effects */
+  .aurora-card {
+    @apply relative rounded-2xl bg-white/5 backdrop-blur-sm border border-white/10 p-6 overflow-hidden shadow-lg;
+  }
+  
+  .aurora-card::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: linear-gradient(
+      90deg,
+      transparent,
+      rgba(255, 87, 87, 0.7),
+      transparent
+    );
+    animation: shimmer 2s linear infinite;
+  }
+  
+  /* Spotlight effect */
+  .spotlight {
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .spotlight::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(
+      circle,
+      rgba(255, 255, 255, 0.1) 0%,
+      transparent 40%
+    );
+    opacity: 0;
+    animation: spotlight 2s ease-in-out forwards;
+    z-index: 0;
+    pointer-events: none;
+  }
 }
 
 @keyframes aurora {
@@ -130,5 +214,23 @@
   }
   50% {
     background-position: 100% 50%;
+  }
+}
+
+@keyframes shimmer {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.7;
   }
 }
