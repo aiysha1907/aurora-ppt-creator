@@ -1,6 +1,6 @@
 
 import React, { useEffect, useRef } from "react";
-import { Zap, Sparkles, Rocket, Clock, Layout, PenTool } from "lucide-react";
+import { Zap, Target, Layout } from "lucide-react";
 import { cn } from "@/lib/utils";
 
 interface BenefitCardProps {
@@ -44,15 +44,15 @@ const BenefitCard = ({ icon, title, description, delay }: BenefitCardProps) => {
     <div
       ref={cardRef}
       className={cn(
-        "rounded-xl p-6 opacity-0 h-full flex flex-col bg-white border border-aurora-dark/5 shadow-sm",
-        "hover:translate-y-[-8px] hover:shadow-md transition-all duration-300"
+        "rounded-xl p-6 opacity-0 h-full flex flex-col bg-[#0d1a3a] border border-[#15677d]/10",
+        "hover:border-[#15677d]/30 hover:shadow-md hover:shadow-[#15677d]/5 transition-all duration-300"
       )}
     >
-      <div className="bg-gradient-to-br from-aurora-primary/10 to-aurora-accent/10 p-4 rounded-lg w-fit mb-4">
+      <div className="bg-gradient-to-br from-[#0d1070]/20 to-[#0e7172]/20 p-4 rounded-lg w-fit mb-4">
         {icon}
       </div>
-      <h3 className="text-xl font-semibold mb-3 text-aurora-dark">{title}</h3>
-      <p className="text-aurora-dark/70 flex-grow">{description}</p>
+      <h3 className="text-xl font-semibold mb-3 text-white">{title}</h3>
+      <p className="text-white/70 flex-grow">{description}</p>
     </div>
   );
 };
@@ -93,56 +93,38 @@ const BenefitsSection = () => {
 
   const benefits = [
     {
-      icon: <Rocket className="w-6 h-6 text-aurora-primary" />,
-      title: "Instant Brilliance",
-      description: "Transform your ideas into stunning presentations in seconds, not hours. Just type and watch the magic happen.",
+      icon: <Target className="w-6 h-6 text-[#15677d]" />,
+      title: "Knows What You Mean",
+      description: "No weird AI gibberish—just precision. Aurora understands your intent and creates exactly what you need.",
       delay: 100,
     },
     {
-      icon: <Sparkles className="w-6 h-6 text-aurora-primary" />,
-      title: "Aesthetic Excellence",
-      description: "Every slide follows design principles that captivate audiences with perfect balance, contrast, and visual hierarchy.",
+      icon: <Layout className="w-6 h-6 text-[#15677d]" />,
+      title: "Designed by The Pros",
+      description: "Every slide? Aesthetically flawless. Aurora uses design principles from the world's best presentations.",
       delay: 200,
     },
     {
-      icon: <Layout className="w-6 h-6 text-aurora-primary" />,
-      title: "Smart Layouts",
-      description: "Aurora intelligently organizes your content with optimal visual arrangements that enhance comprehension and engagement.",
+      icon: <Zap className="w-6 h-6 text-[#15677d]" />,
+      title: "Fast as Hell",
+      description: "A full deck in seconds. Stop wasting hours formatting. Get back to what matters – your message.",
       delay: 300,
-    },
-    {
-      icon: <Zap className="w-6 h-6 text-aurora-primary" />,
-      title: "Effortless Creation",
-      description: "From complex data to creative concepts, Aurora handles it all with sophisticated AI that understands context.",
-      delay: 400,
-    },
-    {
-      icon: <Clock className="w-6 h-6 text-aurora-primary" />,
-      title: "Time Revolution",
-      description: "What used to take days now takes seconds. Reclaim your time while producing better results than ever before.",
-      delay: 500,
-    },
-    {
-      icon: <PenTool className="w-6 h-6 text-aurora-primary" />,
-      title: "Complete Control",
-      description: "Refine any aspect of your generated presentation with intuitive editing tools that keep you in the driver's seat.",
-      delay: 600,
     },
   ];
 
   return (
-    <section id="benefits" className="py-24 px-6 md:px-12 lg:px-24 relative overflow-hidden bg-aurora-background">
+    <section id="benefits" className="py-24 px-6 md:px-12 lg:px-24 relative overflow-hidden bg-black">
       <div className="max-w-7xl mx-auto relative z-10">
-        <div className="text-center max-w-3xl mx-auto mb-16">
-          <h2 ref={titleRef} className="text-4xl md:text-5xl font-bold mb-6 opacity-0 text-aurora-dark">
-            Why <span className="bg-gradient-to-r from-aurora-primary to-aurora-accent bg-clip-text text-transparent">Aurora</span> Changes Everything
+        <div className="text-center mb-16">
+          <h2 ref={titleRef} className="text-4xl md:text-5xl font-bold mb-6 opacity-0 text-white">
+            Why <span className="bg-gradient-to-r from-[#0d1070] to-[#0e7172] bg-clip-text text-transparent">aurora</span> is different
           </h2>
-          <p ref={subtitleRef} className="text-xl text-aurora-dark/70 opacity-0">
+          <p ref={subtitleRef} className="text-xl text-white/70 opacity-0 max-w-3xl mx-auto">
             We've reimagined how presentations are created, setting you free from the tedium while elevating your results
           </p>
         </div>
         
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {benefits.map((benefit, index) => (
             <BenefitCard
               key={index}

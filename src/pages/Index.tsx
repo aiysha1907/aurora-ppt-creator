@@ -2,8 +2,8 @@
 import React, { useEffect } from "react";
 import Header from "@/components/Header";
 import HeroSection from "@/components/HeroSection";
-import DemoSection from "@/components/DemoSection";
 import BenefitsSection from "@/components/BenefitsSection";
+import DemoSection from "@/components/DemoSection";
 import PricingSection from "@/components/PricingSection";
 import FaqSection from "@/components/FaqSection";
 import Footer from "@/components/Footer";
@@ -36,13 +36,13 @@ const Index = () => {
   }, []);
 
   return (
-    <div className="flex flex-col min-h-screen bg-aurora-background">
+    <div className="flex flex-col min-h-screen bg-black">
       <Header />
       
       <main>
         <HeroSection />
-        <DemoSection />
         <BenefitsSection />
+        <DemoSection />
         <PricingSection />
         <FaqSection />
       </main>
