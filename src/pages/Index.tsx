@@ -27,24 +27,22 @@ const Index = () => {
       });
     });
     
-    // Set body background to black
+    // Set body background to the new color
     document.body.classList.add('bg-presly-background');
-    document.body.classList.add('bg-grain');
     
     return () => {
       document.body.classList.remove('bg-presly-background');
-      document.body.classList.remove('bg-grain');
     };
   }, []);
 
   return (
-    <div className="flex flex-col min-h-screen bg-presly-background bg-grain">
+    <div className="flex flex-col min-h-screen bg-presly-background">
       <Header />
       
       <main>
         <HeroSection />
-        <BenefitsSection />
         <DemoSection />
+        <BenefitsSection />
         <PricingSection />
         <FaqSection />
       </main>

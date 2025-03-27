@@ -21,13 +21,13 @@ export default {
     extend: {
       colors: {
         presly: {
-          background: "#121212",
-          secondary: "#222222",
-          primary: "#FF5757",
-          accent: "#4A6CF7",
-          dark: "#333333",
-          text: "#FFFFFF",
-          light: "#F5F5F5",
+          background: "#001c55", // Deep navy blue
+          secondary: "#0a2472", // Slightly lighter navy blue
+          primary: "#4361ee", // Bright blue
+          accent: "#b9d6f2", // Light blue
+          dark: "#001233", // Darkest blue
+          text: "#f1faee", // Off-white
+          light: "#f1faee", // Off-white
         },
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",

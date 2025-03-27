@@ -45,18 +45,19 @@ const BenefitCard = ({ icon, title, description, delay, number }: BenefitCardPro
     <div
       ref={cardRef}
       className={cn(
-        "rounded-xl p-6 opacity-0 h-full flex flex-col bg-presly-dark border border-white/5",
-        "hover:border-presly-accent/30 hover:shadow-md hover:shadow-presly-accent/5 transition-all duration-300"
+        "rounded-xl p-8 opacity-0 flex flex-col bg-presly-secondary border border-presly-accent/10",
+        "hover:border-presly-accent/30 hover:shadow-md hover:shadow-presly-accent/5 transition-all duration-300",
+        "mb-12 w-full"
       )}
     >
       <div className="flex justify-between items-start mb-4">
-        <div className="bg-presly-accent/10 p-4 rounded-lg w-fit">
+        <div className="bg-presly-primary/10 p-4 rounded-lg w-fit">
           {icon}
         </div>
-        <span className="text-2xl font-copper text-presly-primary/70">{number}</span>
+        <span className="text-3xl font-copper text-presly-accent font-bold">{number}</span>
       </div>
-      <h3 className="text-xl font-medium mb-3 text-white">{title}</h3>
-      <p className="text-white/70 flex-grow">{description}</p>
+      <h3 className="text-2xl font-medium mb-3 text-presly-text">{title}</h3>
+      <p className="text-presly-text/80 text-lg">{description}</p>
     </div>
   );
 };
@@ -134,38 +135,25 @@ const BenefitsSection = () => {
   ];
 
   return (
-    <section id="benefits" className="py-24 px-6 md:px-12 lg:px-24 relative overflow-hidden bg-presly-background bg-grain">
+    <section id="benefits" className="py-24 px-6 md:px-12 lg:px-24 relative overflow-hidden bg-presly-background">
       <div className="max-w-7xl mx-auto relative z-10">
         <div className="text-center mb-16">
           <div className="mb-4">
-            <span className="inline-block bg-presly-primary/10 text-presly-primary px-4 py-1 rounded-full text-sm font-medium">Features</span>
+            <span className="inline-block bg-presly-primary/10 text-presly-accent px-4 py-1 rounded-full text-sm font-medium">Features</span>
           </div>
           
-          <h2 ref={titleRef} className="text-4xl md:text-5xl font-copper mb-6 opacity-0 text-white">
+          <h2 ref={titleRef} className="text-4xl md:text-5xl font-copper mb-6 opacity-0 text-presly-text font-bold">
             Why <span className="text-presly-accent">Presly</span> is Your Ultimate Presentation Solution
           </h2>
-          <p ref={subtitleRef} className="text-xl text-white/70 opacity-0 max-w-3xl mx-auto">
+          <p ref={subtitleRef} className="text-xl text-presly-text/80 opacity-0 max-w-3xl mx-auto">
             We've reimagined how presentations are created, setting you free from the tedium while elevating your results
           </p>
         </div>
         
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {benefits.slice(0, 3).map((benefit, index) => (
+        <div className="space-y-8">
+          {benefits.map((benefit, index) => (
             <BenefitCard
               key={index}
-              icon={benefit.icon}
-              title={benefit.title}
-              description={benefit.description}
-              delay={benefit.delay}
-              number={benefit.number}
-            />
-          ))}
-        </div>
-        
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-8">
-          {benefits.slice(3, 5).map((benefit, index) => (
-            <BenefitCard
-              key={index + 3}
               icon={benefit.icon}
               title={benefit.title}
               description={benefit.description}

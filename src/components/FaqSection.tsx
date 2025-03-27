@@ -26,8 +26,8 @@ const FaqItem = ({ question, answer, index, isOpen, onClick }: FaqItemProps) => 
       className={cn(
         "overflow-hidden rounded-xl transition-all duration-300",
         isOpen 
-          ? "border-2 border-presly-accent/70 bg-presly-accent/5" 
-          : "border border-white/10 bg-presly-dark/50"
+          ? "border-2 border-presly-accent bg-presly-secondary" 
+          : "border border-presly-accent/30 bg-presly-background"
       )}
     >
       <button
@@ -35,8 +35,8 @@ const FaqItem = ({ question, answer, index, isOpen, onClick }: FaqItemProps) => 
         className="flex items-center justify-between w-full px-6 py-5 text-left"
       >
         <div className="flex items-center">
-          <span className="text-presly-primary mr-3 font-copper">Q{index + 1}:</span>
-          <span className="font-medium text-lg text-white">{question}</span>
+          <span className="text-presly-accent mr-3 font-copper font-bold">Q{index + 1}:</span>
+          <span className="font-medium text-lg text-presly-text">{question}</span>
         </div>
         <ChevronDown 
           className={cn(
@@ -49,7 +49,7 @@ const FaqItem = ({ question, answer, index, isOpen, onClick }: FaqItemProps) => 
         style={{ height }}
         className="transition-all duration-300 overflow-hidden"
       >
-        <div ref={contentRef} className="px-6 pb-5 pt-0 text-white/70">
+        <div ref={contentRef} className="px-6 pb-5 pt-0 text-presly-text/80">
           {answer}
         </div>
       </div>
@@ -61,7 +61,7 @@ const FaqSection = () => {
   const sectionRef = useRef<HTMLDivElement>(null);
   const titleRef = useRef<HTMLHeadingElement>(null);
   const faqsRef = useRef<HTMLDivElement>(null);
-  const [openIndex, setOpenIndex] = useState<number | null>(null);
+  const [openIndex, setOpenIndex] = useState<number | null>(0); // First one open by default
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -120,18 +120,18 @@ const FaqSection = () => {
     <section
       id="faq"
       ref={sectionRef}
-      className="py-24 px-6 md:px-12 lg:px-24 relative overflow-hidden bg-presly-secondary bg-grain"
+      className="py-24 px-6 md:px-12 lg:px-24 relative overflow-hidden bg-presly-dark"
     >
-      <div className="absolute -top-40 -right-40 w-80 h-80 bg-presly-accent/5 rounded-full blur-3xl"></div>
-      <div className="absolute -bottom-40 -left-40 w-80 h-80 bg-presly-primary/5 rounded-full blur-3xl"></div>
+      <div className="absolute -top-40 -right-40 w-80 h-80 bg-presly-accent/5 rounded-full"></div>
+      <div className="absolute -bottom-40 -left-40 w-80 h-80 bg-presly-primary/5 rounded-full"></div>
       
       <div className="max-w-4xl mx-auto relative z-10">
         <div className="text-center mb-16">
           <div className="mb-4 flex justify-center">
-            <span className="inline-block bg-presly-primary/10 text-presly-primary px-4 py-1 rounded-full text-sm font-medium">FAQs</span>
+            <span className="inline-block bg-presly-primary/10 text-presly-accent px-4 py-1 rounded-full text-sm font-medium">FAQs</span>
           </div>
           
-          <h2 ref={titleRef} className="text-4xl md:text-5xl font-copper mb-6 opacity-0 text-white flex items-center justify-center">
+          <h2 ref={titleRef} className="text-4xl md:text-5xl font-copper mb-6 opacity-0 text-presly-text font-bold flex items-center justify-center">
             <HelpCircle className="mr-3 h-8 w-8 text-presly-accent" />
             <span>You Have Questions, We Have Answers</span>
           </h2>
@@ -151,10 +151,10 @@ const FaqSection = () => {
         </div>
         
         <div className="mt-16 text-center opacity-0 animate-fadeIn" style={{ animationDelay: "600ms" }}>
-          <p className="text-white/70 mb-6">
+          <p className="text-presly-text/80 mb-6">
             Still have questions? We'd love to help.
           </p>
-          <button className="px-8 py-4 border border-presly-accent/30 text-white rounded-full hover:border-presly-accent hover:bg-presly-accent/5 transition-all duration-300">
+          <button className="px-8 py-4 border border-presly-accent text-presly-text rounded-full hover:border-presly-accent hover:bg-presly-secondary transition-all duration-300">
             Contact Support
           </button>
         </div>

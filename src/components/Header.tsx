@@ -27,7 +27,7 @@ const Header = () => {
       className={cn(
         "fixed top-0 left-0 right-0 z-50 transition-all duration-300 py-4 px-6 md:px-12 lg:px-24",
         scrolled 
-          ? "bg-presly-background/80 backdrop-blur-lg shadow-md" 
+          ? "bg-presly-background/90 backdrop-blur-lg shadow-md" 
           : "bg-transparent"
       )}
     >
@@ -49,53 +49,53 @@ const Header = () => {
         <nav className="hidden md:flex items-center space-x-8">
           <a
             href="#benefits"
-            className="text-white hover:text-presly-accent transition-colors duration-300 relative group"
+            className="text-presly-text hover:text-presly-accent transition-colors duration-300 relative group"
           >
             <span>Features</span>
             <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-presly-accent group-hover:w-full transition-all duration-300"></span>
           </a>
           <a
             href="#demo"
-            className="text-white hover:text-presly-accent transition-colors duration-300 relative group"
+            className="text-presly-text hover:text-presly-accent transition-colors duration-300 relative group"
           >
             <span>How It Works</span>
             <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-presly-accent group-hover:w-full transition-all duration-300"></span>
           </a>
           <a
             href="#pricing"
-            className="text-white hover:text-presly-accent transition-colors duration-300 relative group"
+            className="text-presly-text hover:text-presly-accent transition-colors duration-300 relative group"
           >
             <span>Pricing</span>
             <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-presly-accent group-hover:w-full transition-all duration-300"></span>
           </a>
           <div className="group relative">
-            <button className="flex items-center text-white hover:text-presly-accent transition-colors duration-300">
+            <button className="flex items-center text-presly-text hover:text-presly-accent transition-colors duration-300">
               <Globe className="w-4 h-4 mr-1" />
               <span>EN</span>
             </button>
-            <div className="absolute right-0 mt-2 w-36 py-2 rounded-lg bg-presly-secondary border border-white/10 backdrop-blur-md opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform group-hover:translate-y-0 translate-y-2">
+            <div className="absolute right-0 mt-2 w-36 py-2 rounded-lg bg-presly-secondary border border-presly-accent/10 backdrop-blur-md opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform group-hover:translate-y-0 translate-y-2">
               <a
                 href="#"
-                className="block px-4 py-2 hover:bg-white/5 transition-colors"
+                className="block px-4 py-2 text-presly-text hover:bg-presly-accent/10 transition-colors"
               >
                 English
               </a>
               <a
                 href="#"
-                className="block px-4 py-2 hover:bg-white/5 transition-colors"
+                className="block px-4 py-2 text-presly-text hover:bg-presly-accent/10 transition-colors"
               >
                 Español
               </a>
               <a
                 href="#"
-                className="block px-4 py-2 hover:bg-white/5 transition-colors"
+                className="block px-4 py-2 text-presly-text hover:bg-presly-accent/10 transition-colors"
               >
                 Français
               </a>
             </div>
           </div>
-          <button className="bg-transparent border border-white/20 text-white font-medium rounded-full px-6 py-3 hover:bg-white/5 hover:border-presly-accent/30 transition-all duration-300">Login</button>
-          <button className="bg-presly-primary text-white font-medium rounded-full px-6 py-3 hover:shadow-lg hover:shadow-presly-primary/20 transition-all duration-300">
+          <button className="bg-transparent border border-presly-accent/20 text-presly-text font-medium rounded-full px-6 py-3 hover:bg-presly-accent/5 hover:border-presly-accent/50 transition-all duration-300">Login</button>
+          <button className="bg-presly-primary text-presly-text font-medium rounded-full px-6 py-3 hover:shadow-lg hover:shadow-presly-primary/20 transition-all duration-300">
             Start for Free
           </button>
         </nav>
@@ -106,9 +106,9 @@ const Header = () => {
           onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
         >
           {mobileMenuOpen ? (
-            <X className="w-6 h-6 text-white" />
+            <X className="w-6 h-6 text-presly-text" />
           ) : (
-            <Menu className="w-6 h-6 text-white" />
+            <Menu className="w-6 h-6 text-presly-text" />
           )}
         </button>
       </div>
@@ -123,24 +123,24 @@ const Header = () => {
         <nav className="flex flex-col space-y-4 px-6 pt-4">
           <a
             href="#benefits"
-            className="text-white py-2 hover:text-presly-accent transition-colors duration-300"
+            className="text-presly-text py-2 hover:text-presly-accent transition-colors duration-300"
           >
             Features
           </a>
           <a
             href="#demo"
-            className="text-white py-2 hover:text-presly-accent transition-colors duration-300"
+            className="text-presly-text py-2 hover:text-presly-accent transition-colors duration-300"
           >
             How It Works
           </a>
           <a
             href="#pricing"
-            className="text-white py-2 hover:text-presly-accent transition-colors duration-300"
+            className="text-presly-text py-2 hover:text-presly-accent transition-colors duration-300"
           >
             Pricing
           </a>
           <div className="py-2">
-            <button className="flex items-center text-white hover:text-presly-accent transition-colors duration-300">
+            <button className="flex items-center text-presly-text hover:text-presly-accent transition-colors duration-300">
               <Globe className="w-4 h-4 mr-1" />
               <span>Language</span>
             </button>
@@ -165,8 +165,8 @@ const Header = () => {
               </a>
             </div>
           </div>
-          <button className="bg-transparent border border-white/20 text-white font-medium rounded-full py-3 hover:bg-white/5 hover:border-presly-accent/30 transition-all duration-300 w-full">Login</button>
-          <button className="bg-presly-primary text-white font-medium rounded-full py-3 hover:shadow-lg hover:shadow-presly-primary/20 transition-all duration-300 w-full">
+          <button className="bg-transparent border border-presly-accent/20 text-presly-text font-medium rounded-full py-3 hover:bg-presly-accent/5 hover:border-presly-accent/50 transition-all duration-300 w-full">Login</button>
+          <button className="bg-presly-primary text-presly-text font-medium rounded-full py-3 hover:shadow-lg hover:shadow-presly-primary/20 transition-all duration-300 w-full">
             Start for Free
           </button>
         </nav>
