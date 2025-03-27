@@ -28,15 +28,17 @@ const Index = () => {
     });
     
     // Set body background to black
-    document.body.classList.add('bg-black');
+    document.body.classList.add('bg-presly-background');
+    document.body.classList.add('bg-grain');
     
     return () => {
-      document.body.classList.remove('bg-black');
+      document.body.classList.remove('bg-presly-background');
+      document.body.classList.remove('bg-grain');
     };
   }, []);
 
   return (
-    <div className="flex flex-col min-h-screen bg-black">
+    <div className="flex flex-col min-h-screen bg-presly-background bg-grain">
       <Header />
       
       <main>

@@ -1,3 +1,4 @@
+
 import type { Config } from "tailwindcss";
 
 export default {
@@ -19,13 +20,12 @@ export default {
     },
     extend: {
       colors: {
-        aurora: {
-          background: "#000000",
-          secondary: "#0d2c78",
+        presly: {
+          background: "#121212",
+          secondary: "#222222",
           primary: "#FF5757",
-          blue: "#15677d",
-          accent: "#0e7172",
-          dark: "#133f62",
+          accent: "#4A6CF7",
+          dark: "#333333",
           text: "#FFFFFF",
           light: "#F5F5F5",
         },
@@ -75,6 +75,7 @@ export default {
       },
       fontFamily: {
         montserrat: ["Montserrat", "sans-serif"],
+        copper: ["'Copperplate'", "serif"],
       },
       borderRadius: {
         lg: "var(--radius)",
@@ -106,10 +107,6 @@ export default {
           "0%": { backgroundPosition: "-500px 0" },
           "100%": { backgroundPosition: "500px 0" },
         },
-        aurora: {
-          "0%, 100%": { backgroundPosition: "0% 50%" },
-          "50%": { backgroundPosition: "100% 50%" },
-        },
         pulse: {
           "0%, 100%": { transform: "scale(1)" },
           "50%": { transform: "scale(1.05)" },
@@ -118,15 +115,17 @@ export default {
           "0%": { opacity: "0", transform: "translate(-50%, -50%) scale(0.5)" },
           "100%": { opacity: "1", transform: "translate(-50%, -50%) scale(1)" },
         },
-        "text-gradient": {
-          "0%, 100%": {
-            "background-size": "200% 200%",
-            "background-position": "left center",
-          },
-          "50%": {
-            "background-size": "200% 200%",
-            "background-position": "right center",
-          },
+        slideUp: {
+          "0%": { transform: "translateY(30px)", opacity: "0" },
+          "100%": { transform: "translateY(0)", opacity: "1" },
+        },
+        slideIn: {
+          "0%": { transform: "translateX(-20px)", opacity: "0" },
+          "100%": { transform: "translateX(0)", opacity: "1" },
+        },
+        fadeInScale: {
+          "0%": { transform: "scale(0.95)", opacity: "0" },
+          "100%": { transform: "scale(1)", opacity: "1" },
         },
       },
       animation: {
@@ -136,11 +135,15 @@ export default {
         glow: "glow 3s ease-in-out infinite",
         fadeIn: "fadeIn 0.8s ease-out forwards",
         shimmer: "shimmer 2s linear infinite",
-        aurora: "aurora 15s ease infinite",
         pulse: "pulse 3s ease-in-out infinite",
         spotlight: "spotlight 2s ease-in-out forwards",
-        "text-gradient": "text-gradient 3s ease infinite",
+        slideUp: "slideUp 0.7s ease-out forwards",
+        slideIn: "slideIn 0.7s ease-out forwards",
+        fadeInScale: "fadeInScale 0.5s ease-out forwards",
       },
+      backgroundImage: {
+        'grain': "url(\"data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E\")",
+      }
     },
   },
   plugins: [require("tailwindcss-animate")],

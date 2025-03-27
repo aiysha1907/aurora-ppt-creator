@@ -1,16 +1,67 @@
 
-import React, { useEffect, useRef } from "react";
-import {
-  Accordion,
-  AccordionContent,
-  AccordionItem,
-  AccordionTrigger,
-} from "@/components/ui/accordion";
+import React, { useEffect, useRef, useState } from "react";
+import { cn } from "@/lib/utils";
+import { ChevronDown, HelpCircle } from "lucide-react";
+
+interface FaqItemProps {
+  question: string;
+  answer: string;
+  index: number;
+  isOpen: boolean;
+  onClick: () => void;
+}
+
+const FaqItem = ({ question, answer, index, isOpen, onClick }: FaqItemProps) => {
+  const contentRef = useRef<HTMLDivElement>(null);
+  const [height, setHeight] = useState<number | undefined>(0);
+
+  useEffect(() => {
+    if (contentRef.current) {
+      setHeight(isOpen ? contentRef.current.scrollHeight : 0);
+    }
+  }, [isOpen]);
+
+  return (
+    <div 
+      className={cn(
+        "overflow-hidden rounded-xl transition-all duration-300",
+        isOpen 
+          ? "border-2 border-presly-accent/70 bg-presly-accent/5" 
+          : "border border-white/10 bg-presly-dark/50"
+      )}
+    >
+      <button
+        onClick={onClick}
+        className="flex items-center justify-between w-full px-6 py-5 text-left"
+      >
+        <div className="flex items-center">
+          <span className="text-presly-primary mr-3 font-copper">Q{index + 1}:</span>
+          <span className="font-medium text-lg text-white">{question}</span>
+        </div>
+        <ChevronDown 
+          className={cn(
+            "h-5 w-5 text-presly-accent transition-transform duration-300",
+            isOpen ? "transform rotate-180" : ""
+          )}
+        />
+      </button>
+      <div
+        style={{ height }}
+        className="transition-all duration-300 overflow-hidden"
+      >
+        <div ref={contentRef} className="px-6 pb-5 pt-0 text-white/70">
+          {answer}
+        </div>
+      </div>
+    </div>
+  );
+};
 
 const FaqSection = () => {
   const sectionRef = useRef<HTMLDivElement>(null);
   const titleRef = useRef<HTMLHeadingElement>(null);
-  const accordionRef = useRef<HTMLDivElement>(null);
+  const faqsRef = useRef<HTMLDivElement>(null);
+  const [openIndex, setOpenIndex] = useState<number | null>(null);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -18,11 +69,11 @@ const FaqSection = () => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
             if (titleRef.current) {
-              titleRef.current.classList.add("animate-fadeIn");
+              titleRef.current.classList.add("animate-slideUp");
             }
             setTimeout(() => {
-              if (accordionRef.current) {
-                accordionRef.current.classList.add("animate-fadeIn");
+              if (faqsRef.current) {
+                faqsRef.current.classList.add("animate-slideUp");
               }
             }, 300);
           }
@@ -44,34 +95,24 @@ const FaqSection = () => {
 
   const faqs = [
     {
-      question: "How does Aurora create presentations so quickly?",
-      answer:
-        "Aurora's breakthrough AI analyzes your prompt, understands the context, and builds a presentation structure in milliseconds. It then crafts each slide with intelligent design principles, creating professional-quality content that feels handcrafted but happens at the speed of thought.",
+      question: "How does Presly generate presentations?",
+      answer: "Presly's AI understands your input, structures your ideas, and designs a polished, interactive presentation in seconds.",
     },
     {
-      question: "Can I customize the presentations after they're created?",
-      answer:
-        "Absolutely! Every element is fully editable. Change colors, layouts, fonts, images—anything you can imagine. Aurora gives you the perfect starting point, then puts you in complete control of the final result. It's the best of both worlds: AI speed with human creativity.",
+      question: "Can I customize my AI-generated slides?",
+      answer: "Absolutely! You have full control over text, colors, images, and animations—so you can tweak your slides to perfection.",
     },
     {
-      question: "What kind of presentations can Aurora handle?",
-      answer:
-        "From business pitches to educational content, product launches to research presentations—Aurora handles it all with equal brilliance. Our AI has been trained on thousands of professional presentations across industries, ensuring whatever you need is just a prompt away.",
+      question: "What types of templates are available?",
+      answer: "Presly offers a wide range of templates, from corporate pitch decks to educational lectures and marketing presentations.",
     },
     {
-      question: "Do I need design skills to use Aurora?",
-      answer:
-        "Not at all! That's the beauty of Aurora. You bring the ideas, we handle the design. Of course, if you do have design preferences, Aurora can adapt to your direction. It's perfect for both design novices looking for excellence and professionals seeking efficiency.",
+      question: "Can I try Presly before subscribing?",
+      answer: "Yes! We offer a free trial so you can experience the power of AI-generated presentations before committing.",
     },
     {
-      question: "How does pricing work?",
-      answer:
-        "We offer a range of plans starting at just $10/month for individual creators. Our professional and team plans include additional features like brand kit integration, expanded slide counts, and collaboration tools. All plans start with a 7-day free trial, no credit card required.",
-    },
-    {
-      question: "Is my content secure and private?",
-      answer:
-        "Your privacy is paramount. Aurora employs end-to-end encryption for all content, and we never use your presentations to train our models without explicit permission. Your brilliant ideas remain yours alone, with enterprise-grade security protecting every presentation you create.",
+      question: "How is Presly different from other presentation tools?",
+      answer: "Unlike traditional tools, Presly does the work for you—design, layout, and content structure are all AI-powered, making slide creation faster and smarter than ever.",
     },
   ];
 
@@ -79,35 +120,41 @@ const FaqSection = () => {
     <section
       id="faq"
       ref={sectionRef}
-      className="py-24 px-6 md:px-12 lg:px-24 relative overflow-hidden bg-aurora-background"
+      className="py-24 px-6 md:px-12 lg:px-24 relative overflow-hidden bg-presly-secondary bg-grain"
     >
+      <div className="absolute -top-40 -right-40 w-80 h-80 bg-presly-accent/5 rounded-full blur-3xl"></div>
+      <div className="absolute -bottom-40 -left-40 w-80 h-80 bg-presly-primary/5 rounded-full blur-3xl"></div>
+      
       <div className="max-w-4xl mx-auto relative z-10">
         <div className="text-center mb-16">
-          <h2 ref={titleRef} className="text-4xl md:text-5xl font-bold mb-6 opacity-0 text-aurora-dark">
-            Questions You Might <span className="text-aurora-primary">Have</span>
+          <div className="mb-4 flex justify-center">
+            <span className="inline-block bg-presly-primary/10 text-presly-primary px-4 py-1 rounded-full text-sm font-medium">FAQs</span>
+          </div>
+          
+          <h2 ref={titleRef} className="text-4xl md:text-5xl font-copper mb-6 opacity-0 text-white flex items-center justify-center">
+            <HelpCircle className="mr-3 h-8 w-8 text-presly-accent" />
+            <span>You Have Questions, We Have Answers</span>
           </h2>
         </div>
         
-        <div ref={accordionRef} className="opacity-0">
-          <Accordion type="single" collapsible className="space-y-4">
-            {faqs.map((faq, index) => (
-              <AccordionItem key={index} value={`item-${index}`} className="rounded-xl overflow-hidden border border-aurora-dark/10 bg-white shadow-sm">
-                <AccordionTrigger className="px-6 py-4 hover:no-underline hover:bg-aurora-secondary/30 transition-colors">
-                  <span className="text-left font-medium text-lg text-aurora-dark">{faq.question}</span>
-                </AccordionTrigger>
-                <AccordionContent className="px-6 pb-4 pt-2 text-aurora-dark/70">
-                  {faq.answer}
-                </AccordionContent>
-              </AccordionItem>
-            ))}
-          </Accordion>
+        <div ref={faqsRef} className="opacity-0 space-y-4">
+          {faqs.map((faq, index) => (
+            <FaqItem
+              key={index}
+              question={faq.question}
+              answer={faq.answer}
+              index={index}
+              isOpen={openIndex === index}
+              onClick={() => setOpenIndex(openIndex === index ? null : index)}
+            />
+          ))}
         </div>
         
         <div className="mt-16 text-center opacity-0 animate-fadeIn" style={{ animationDelay: "600ms" }}>
-          <p className="text-aurora-dark/70 mb-6">
+          <p className="text-white/70 mb-6">
             Still have questions? We'd love to help.
           </p>
-          <button className="px-8 py-4 border border-aurora-dark/10 text-aurora-dark rounded-full hover:border-aurora-primary/20 hover:bg-aurora-primary/5 transition-all duration-300">
+          <button className="px-8 py-4 border border-presly-accent/30 text-white rounded-full hover:border-presly-accent hover:bg-presly-accent/5 transition-all duration-300">
             Contact Support
           </button>
         </div>
