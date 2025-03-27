@@ -56,7 +56,7 @@ const HeroSection = () => {
             <div className="space-y-2 text-presly-text/80 max-w-3xl mx-auto">
               <p className="text-lg">No long hours designing. No complicated tools. Just AI-powered perfection.</p>
               <p className="text-lg">Customizable templates, engaging visuals, and interactive slides—all in minutes.</p>
-              <p className="text-xl mt-6 text-presly-text">Focus on your ideas. Presly handles the rest.</p>
+              <p className="text-xl mt-6 text-presly-text">Focus on your ideas. <span className="text-presly-accent">Presly</span> handles the rest.</p>
             </div>
           </div>
 
@@ -65,7 +65,7 @@ const HeroSection = () => {
             ref={buttonRef}
             className="pt-8 flex flex-col sm:flex-row items-center justify-center gap-4 opacity-0"
           >
-            <button className="group flex items-center px-8 py-4 bg-presly-accent text-presly-background rounded-full hover:shadow-2xl transition-all duration-300 w-full sm:w-auto relative overflow-hidden font-bold">
+            <button className="group flex items-center px-8 py-4 bg-presly-accent text-presly-background rounded-full hover:bg-presly-text hover:text-presly-accent transition-all duration-300 w-full sm:w-auto relative overflow-hidden font-bold">
               <span className="relative z-10 font-medium">Start Creating Instantly</span>
               <ArrowRight className="relative z-10 ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
             </button>

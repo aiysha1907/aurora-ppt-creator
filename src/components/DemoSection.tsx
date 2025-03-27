@@ -41,23 +41,23 @@ const DemoSection = () => {
     <section
       ref={sectionRef}
       id="demo"
-      className="py-24 px-6 md:px-12 lg:px-24 relative overflow-hidden bg-presly-secondary"
+      className="py-24 px-6 md:px-12 lg:px-24 relative overflow-hidden bg-presly-accent/10"
     >
       <div className="max-w-7xl mx-auto relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           <div ref={contentRef} className="opacity-0">
             <div className="mb-4">
-              <span className="inline-block bg-presly-primary/20 text-presly-accent px-4 py-1 rounded-full text-sm font-medium">Demo Video / How It Works</span>
+              <span className="inline-block bg-presly-accent/20 text-presly-accent px-4 py-1 rounded-full text-sm font-medium">Demo Video / How It Works</span>
             </div>
             
             <h2 className="text-4xl md:text-5xl font-copper mb-6 text-presly-text font-bold">
-              🎥 Watch Presly in Action
+              🎥 Watch <span className="text-presly-accent">Presly</span> in Action
             </h2>
             <p className="text-xl text-presly-text/80 mb-8">
               See how easy it is to create professional, engaging presentations with AI in just a few clicks.
             </p>
             
-            <button className="flex items-center px-8 py-4 bg-presly-accent text-presly-background rounded-full hover:shadow-lg transition-all duration-300">
+            <button className="flex items-center px-8 py-4 bg-presly-accent text-presly-background rounded-full hover:bg-presly-text hover:text-presly-accent transition-all duration-300">
               <Zap className="mr-2 w-5 h-5" />
               <span className="font-medium">Generate Slides with a Single Prompt</span>
             </button>
@@ -70,24 +70,24 @@ const DemoSection = () => {
             <div className="rounded-xl overflow-hidden aspect-video group relative shadow-2xl border border-presly-accent/20">
               {/* Play button */}
               <div className="absolute inset-0 flex items-center justify-center z-20">
-                <button className="bg-presly-text rounded-full p-6 shadow-lg group-hover:scale-110 transition-transform duration-300 relative">
+                <button className="bg-presly-text rounded-full p-6 shadow-lg group-hover:scale-110 transition-transform duration-300 relative hover:bg-presly-accent">
                   <Play className="w-10 h-10 text-presly-background fill-presly-background relative z-10" />
                 </button>
               </div>
               
               {/* Video placeholder with laptop illustration */}
-              <div className="absolute inset-0 flex flex-col items-center justify-center bg-presly-dark/70 z-10">
+              <div className="absolute inset-0 flex flex-col items-center justify-center bg-presly-background/70 z-10">
                 <div className="relative w-60 h-48">
                   {/* Laptop base */}
-                  <div className="absolute bottom-0 w-full h-2 bg-presly-dark rounded-b-lg"></div>
+                  <div className="absolute bottom-0 w-full h-2 bg-presly-background rounded-b-lg"></div>
                   
                   {/* Laptop body */}
-                  <div className="absolute bottom-2 w-full h-40 bg-presly-background rounded-t-lg overflow-hidden flex items-center justify-center">
+                  <div className="absolute bottom-2 w-full h-40 bg-presly-text rounded-t-lg overflow-hidden flex items-center justify-center">
                     {/* Screen content */}
-                    <div className="w-[90%] h-[90%] bg-presly-secondary rounded">
+                    <div className="w-[90%] h-[90%] bg-presly-background rounded">
                       <div className="h-full p-2 flex flex-col">
                         <div className="flex space-x-1 mb-2">
-                          <div className="w-2 h-2 rounded-full bg-presly-primary"></div>
+                          <div className="w-2 h-2 rounded-full bg-presly-background"></div>
                           <div className="w-2 h-2 rounded-full bg-presly-accent"></div>
                           <div className="w-2 h-2 rounded-full bg-presly-text"></div>
                         </div>
@@ -101,7 +101,7 @@ const DemoSection = () => {
               </div>
               
               {/* Video placeholder background */}
-              <div className="w-full h-full bg-presly-dark"></div>
+              <div className="w-full h-full bg-presly-background"></div>
             </div>
           </div>
         </div>

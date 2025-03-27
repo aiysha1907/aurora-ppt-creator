@@ -6,6 +6,7 @@ import BenefitsSection from "@/components/BenefitsSection";
 import DemoSection from "@/components/DemoSection";
 import PricingSection from "@/components/PricingSection";
 import FaqSection from "@/components/FaqSection";
+import EndSection from "@/components/EndSection";
 import Footer from "@/components/Footer";
 
 const Index = () => {
@@ -45,6 +46,7 @@ const Index = () => {
         <BenefitsSection />
         <PricingSection />
         <FaqSection />
+        <EndSection />
       </main>
       
       <Footer />

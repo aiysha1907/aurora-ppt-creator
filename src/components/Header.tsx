@@ -35,13 +35,7 @@ const Header = () => {
         {/* Logo */}
         <a href="/" className="transition-transform hover:scale-105 relative group">
           <div className="flex items-center relative z-10">
-            <PreslyLogo className="h-8 w-8 mr-2" />
-            <span className="font-copper text-xl tracking-wider font-bold relative">
-              <span className="text-presly-accent">
-                presly
-              </span>
-              <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-presly-accent group-hover:w-full transition-all duration-300"></span>
-            </span>
+            <PreslyLogo className="h-8 mr-2" />
           </div>
         </a>
 
@@ -80,8 +74,8 @@ const Header = () => {
               </a>
             </div>
           </div>
-          <button className="bg-transparent border border-presly-accent/20 text-presly-text font-medium rounded-full px-6 py-3 hover:bg-presly-accent/5 hover:border-presly-accent/50 transition-all duration-300">Login</button>
-          <button className="bg-presly-accent text-presly-background font-medium rounded-full px-6 py-3 hover:shadow-lg hover:shadow-presly-accent/20 transition-all duration-300">
+          <button className="bg-transparent border border-presly-accent/20 text-presly-text font-medium rounded-full px-6 py-3 hover:bg-presly-accent hover:text-presly-background hover:border-presly-accent transition-all duration-300">Login</button>
+          <button className="bg-presly-accent text-presly-background font-medium rounded-full px-6 py-3 hover:bg-presly-text hover:text-presly-accent transition-all duration-300">
             Start for Free
           </button>
         </nav>
@@ -139,8 +133,8 @@ const Header = () => {
               </a>
             </div>
           </div>
-          <button className="bg-transparent border border-presly-accent/20 text-presly-text font-medium rounded-full py-3 hover:bg-presly-accent/5 hover:border-presly-accent/50 transition-all duration-300 w-full">Login</button>
-          <button className="bg-presly-accent text-presly-background font-medium rounded-full py-3 hover:shadow-lg hover:shadow-presly-accent/20 transition-all duration-300 w-full">
+          <button className="bg-transparent border border-presly-accent/20 text-presly-text font-medium rounded-full py-3 hover:bg-presly-accent hover:text-presly-background hover:border-presly-accent transition-all duration-300 w-full">Login</button>
+          <button className="bg-presly-accent text-presly-background font-medium rounded-full py-3 hover:bg-presly-text hover:text-presly-accent transition-all duration-300 w-full">
             Start for Free
           </button>
         </nav>
