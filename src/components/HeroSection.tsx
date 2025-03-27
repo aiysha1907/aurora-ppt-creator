@@ -27,20 +27,20 @@ const HeroSection = () => {
       {/* Decorative Elements */}
       <div className="absolute inset-0 z-0 opacity-20">
         <div className="absolute top-1/4 left-1/4 w-64 h-64 rounded-full bg-presly-accent/10"></div>
-        <div className="absolute bottom-1/4 right-1/4 w-96 h-96 rounded-full bg-presly-primary/10"></div>
+        <div className="absolute bottom-1/4 right-1/4 w-96 h-96 rounded-full bg-presly-accent/10"></div>
       </div>
 
       <div className="max-w-7xl mx-auto w-full z-10 relative">
         <div className="max-w-4xl mx-auto text-center space-y-8">
           <div className="inline-flex items-center space-x-2 mb-4">
             <Laptop className="h-6 w-6 text-presly-accent" />
-            <Presentation className="h-6 w-6 text-presly-primary" />
+            <Presentation className="h-6 w-6 text-presly-accent" />
           </div>
 
           {/* Title */}
           <h1 
             ref={titleRef}
-            className="text-5xl md:text-6xl lg:text-7xl font-copper mb-6 opacity-0 text-presly-text font-bold"
+            className="text-5xl md:text-6xl lg:text-7xl font-copper mb-6 opacity-0 text-presly-text font-extrabold"
           >
             Pitch, Present, <span className="text-presly-accent">Impress</span>
           </h1>
@@ -51,12 +51,12 @@ const HeroSection = () => {
             className="opacity-0 space-y-4"
           >
             <p className="text-xl md:text-2xl text-presly-text font-medium max-w-3xl mx-auto">
-              💡 The Fastest Way to Create Professional Presentations.
+              The Fastest Way to Create Professional Presentations.
             </p>
             <div className="space-y-2 text-presly-text/80 max-w-3xl mx-auto">
-              <p className="text-lg">⏳ No long hours designing. No complicated tools. Just AI-powered perfection.</p>
-              <p className="text-lg">🎨 Customizable templates, engaging visuals, and interactive slides—all in minutes.</p>
-              <p className="text-xl mt-6 text-presly-text">✨ Focus on your ideas. Presly handles the rest. ✨</p>
+              <p className="text-lg">No long hours designing. No complicated tools. Just AI-powered perfection.</p>
+              <p className="text-lg">Customizable templates, engaging visuals, and interactive slides—all in minutes.</p>
+              <p className="text-xl mt-6 text-presly-text">Focus on your ideas. Presly handles the rest.</p>
             </div>
           </div>
 
@@ -65,7 +65,7 @@ const HeroSection = () => {
             ref={buttonRef}
             className="pt-8 flex flex-col sm:flex-row items-center justify-center gap-4 opacity-0"
           >
-            <button className="group flex items-center px-8 py-4 bg-presly-primary text-white rounded-full hover:shadow-2xl transition-all duration-300 w-full sm:w-auto relative overflow-hidden">
+            <button className="group flex items-center px-8 py-4 bg-presly-accent text-presly-background rounded-full hover:shadow-2xl transition-all duration-300 w-full sm:w-auto relative overflow-hidden font-bold">
               <span className="relative z-10 font-medium">Start Creating Instantly</span>
               <ArrowRight className="relative z-10 ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
             </button>

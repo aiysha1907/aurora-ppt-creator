@@ -1,4 +1,3 @@
-
 import type { Config } from "tailwindcss";
 
 export default {
@@ -21,13 +20,9 @@ export default {
     extend: {
       colors: {
         presly: {
-          background: "#001c55", // Deep navy blue
-          secondary: "#0a2472", // Slightly lighter navy blue
-          primary: "#4361ee", // Bright blue
-          accent: "#b9d6f2", // Light blue
-          dark: "#001233", // Darkest blue
-          text: "#f1faee", // Off-white
-          light: "#f1faee", // Off-white
+          background: "#0D1A2F", // Dark navy blue
+          accent: "#8ecae6", // Baby blue
+          text: "#f1faee", // White/off-white
         },
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",

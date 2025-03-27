@@ -98,7 +98,7 @@
   
   /* Button styles */
   .btn-primary {
-    @apply bg-presly-primary text-presly-text font-medium rounded-full px-6 py-3 hover:bg-presly-primary/90 transition-all duration-300 shadow-lg hover:shadow-xl relative overflow-hidden;
+    @apply bg-presly-accent text-presly-background font-medium rounded-full px-6 py-3 hover:bg-presly-accent/90 transition-all duration-300 shadow-lg hover:shadow-xl relative overflow-hidden;
   }
 
   .btn-ghost {

@@ -12,7 +12,7 @@ const PreslyLogo: React.FC<PreslyLogoProps> = ({ className = "w-40 h-40" }) => {
         {/* Simple, minimalist P shape */}
         <path 
           d="M70 50H130C140 50 150 60 150 75C150 90 140 100 130 100H70V50Z" 
-          stroke="#b9d6f2" 
+          stroke="#8ecae6" 
           strokeWidth="4"
           fill="none"
           className="transition-all duration-300"
@@ -21,7 +21,7 @@ const PreslyLogo: React.FC<PreslyLogoProps> = ({ className = "w-40 h-40" }) => {
         {/* Vertical line of P */}
         <path 
           d="M70 50V150" 
-          stroke="#b9d6f2" 
+          stroke="#8ecae6" 
           strokeWidth="4"
           className="transition-all duration-300"
         />
@@ -29,7 +29,7 @@ const PreslyLogo: React.FC<PreslyLogoProps> = ({ className = "w-40 h-40" }) => {
         {/* Subtle presentation icon */}
         <path 
           d="M110 120L130 130L110 140" 
-          stroke="#4361ee" 
+          stroke="#f1faee" 
           strokeWidth="2"
           fill="none"
         />

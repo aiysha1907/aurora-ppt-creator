@@ -45,13 +45,13 @@ const BenefitCard = ({ icon, title, description, delay, number }: BenefitCardPro
     <div
       ref={cardRef}
       className={cn(
-        "rounded-xl p-8 opacity-0 flex flex-col bg-presly-secondary border border-presly-accent/10",
+        "rounded-xl p-8 opacity-0 flex flex-col bg-presly-accent/20 border border-presly-accent/10",
         "hover:border-presly-accent/30 hover:shadow-md hover:shadow-presly-accent/5 transition-all duration-300",
-        "mb-12 w-full"
+        "w-full"
       )}
     >
       <div className="flex justify-between items-start mb-4">
-        <div className="bg-presly-primary/10 p-4 rounded-lg w-fit">
+        <div className="bg-presly-accent/10 p-4 rounded-lg w-fit">
           {icon}
         </div>
         <span className="text-3xl font-copper text-presly-accent font-bold">{number}</span>
@@ -102,35 +102,35 @@ const BenefitsSection = () => {
       title: "AI-Powered Smart Slides",
       description: "Forget about structuring slides manually. Presly analyzes your content and automatically generates well-organized, visually stunning presentations.",
       delay: 100,
-      number: "1️⃣",
+      number: "1",
     },
     {
       icon: <Layout className="w-6 h-6 text-presly-accent" />,
       title: "Interactive & Engaging Designs",
       description: "Static slides are outdated. With interactive elements, animations, and smart transitions, keep your audience hooked from start to finish.",
       delay: 200,
-      number: "2️⃣",
+      number: "2",
     },
     {
       icon: <Palette className="w-6 h-6 text-presly-accent" />,
       title: "Multiple Themes & Custom Templates",
       description: "Choose from dozens of professional templates designed for different industries, topics, and presentation styles—ready to go with one click.",
       delay: 300,
-      number: "3️⃣",
+      number: "3",
     },
     {
       icon: <Clock className="w-6 h-6 text-presly-accent" />,
       title: "Lightning-Fast Generation",
       description: "Why spend hours making slides? With Presly, create an entire deck in minutes while AI ensures perfection in design, flow, and content structure.",
       delay: 400,
-      number: "4️⃣",
+      number: "4",
     },
     {
       icon: <Zap className="w-6 h-6 text-presly-accent" />,
       title: "Easy Editing & Customization",
       description: "Want to tweak your slides? Seamlessly edit, modify, and personalize any element—Presly gives you complete control without the complexity.",
       delay: 500,
-      number: "5️⃣",
+      number: "5",
     },
   ];
 
@@ -139,10 +139,10 @@ const BenefitsSection = () => {
       <div className="max-w-7xl mx-auto relative z-10">
         <div className="text-center mb-16">
           <div className="mb-4">
-            <span className="inline-block bg-presly-primary/10 text-presly-accent px-4 py-1 rounded-full text-sm font-medium">Features</span>
+            <span className="inline-block bg-presly-accent/10 text-presly-accent px-4 py-1 rounded-full text-sm font-medium">Features</span>
           </div>
           
-          <h2 ref={titleRef} className="text-4xl md:text-5xl font-copper mb-6 opacity-0 text-presly-text font-bold">
+          <h2 ref={titleRef} className="text-4xl md:text-5xl font-copper mb-6 opacity-0 text-presly-text font-extrabold">
             Why <span className="text-presly-accent">Presly</span> is Your Ultimate Presentation Solution
           </h2>
           <p ref={subtitleRef} className="text-xl text-presly-text/80 opacity-0 max-w-3xl mx-auto">
