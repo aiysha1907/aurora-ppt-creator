@@ -41,17 +41,24 @@ const EndSection = () => {
               Say Goodbye to <span className="text-presly-accent">Boring Slides</span>
             </h2>
             
-            <button className="flex items-center px-8 py-4 bg-presly-accent text-presly-background rounded-full hover:bg-presly-text hover:text-presly-accent transition-all duration-300 font-medium">
-              Start Creating with <span className="text-presly-background font-bold ml-1 hover:text-presly-accent">Presly</span> Today
+            <button className="flex items-center px-8 py-4 bg-presly-accent text-presly-background rounded-full hover:bg-presly-accent/80 transition-all duration-300 font-medium">
+              Start Creating with <span className="text-presly-background font-bold ml-1 hover:text-presly-background"> Presly</span> Today
             </button>
           </div>
           
           <div className="w-full max-w-xl">
-            <img 
-              src="/lovable-uploads/14ce257b-275d-407e-91ff-aa19a494e5cb.png" 
-              alt="Presentation outline" 
-              className="w-full"
-            />
+            <div className="relative">
+              <img 
+                src="/lovable-uploads/966bc2f9-4dec-4792-9ecf-591e2c43f9bb.png" 
+                alt="Presentation outline" 
+                className="w-full opacity-60 max-h-[300px] object-contain"
+              />
+              <img 
+                src="/lovable-uploads/14ce257b-275d-407e-91ff-aa19a494e5cb.png" 
+                alt="Presentation features" 
+                className="w-full absolute top-0 left-0 z-10 opacity-70"
+              />
+            </div>
           </div>
         </div>
       </div>

@@ -50,14 +50,14 @@ const DemoSection = () => {
               <span className="inline-block bg-presly-accent/20 text-presly-accent px-4 py-1 rounded-full text-sm font-medium">Demo Video / How It Works</span>
             </div>
             
-            <h2 className="text-4xl md:text-5xl font-copper mb-6 text-presly-text font-bold">
-              🎥 Watch <span className="text-presly-accent">Presly</span> in Action
+            <h2 className="text-4xl md:text-5xl font-copper mb-6 text-presly-text font-extrabold">
+              Watch <span className="text-presly-accent font-copper font-extrabold">Presly</span> in Action
             </h2>
             <p className="text-xl text-presly-text/80 mb-8">
               See how easy it is to create professional, engaging presentations with AI in just a few clicks.
             </p>
             
-            <button className="flex items-center px-8 py-4 bg-presly-accent text-presly-background rounded-full hover:bg-presly-text hover:text-presly-accent transition-all duration-300">
+            <button className="flex items-center px-8 py-4 bg-presly-accent text-presly-background rounded-full hover:bg-presly-accent/80 transition-all duration-300">
               <Zap className="mr-2 w-5 h-5" />
               <span className="font-medium">Generate Slides with a Single Prompt</span>
             </button>

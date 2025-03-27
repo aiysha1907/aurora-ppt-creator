@@ -24,10 +24,13 @@ const HeroSection = () => {
 
   return (
     <section className="pt-32 pb-24 md:pb-32 px-6 md:px-12 lg:px-24 min-h-screen flex items-center relative overflow-hidden bg-presly-background">
-      {/* Decorative Elements */}
-      <div className="absolute inset-0 z-0 opacity-20">
-        <div className="absolute top-1/4 left-1/4 w-64 h-64 rounded-full bg-presly-accent/10"></div>
-        <div className="absolute bottom-1/4 right-1/4 w-96 h-96 rounded-full bg-presly-accent/10"></div>
+      {/* Background illustration */}
+      <div className="absolute right-0 bottom-0 w-full md:w-1/2 h-[300px] opacity-20">
+        <img 
+          src="/lovable-uploads/c9da498c-fde7-448b-8427-7de354bd73ba.png" 
+          alt="Person working on laptop" 
+          className="w-full h-full object-contain object-right-bottom"
+        />
       </div>
 
       <div className="max-w-7xl mx-auto w-full z-10 relative">
@@ -56,7 +59,7 @@ const HeroSection = () => {
             <div className="space-y-2 text-presly-text/80 max-w-3xl mx-auto">
               <p className="text-lg">No long hours designing. No complicated tools. Just AI-powered perfection.</p>
               <p className="text-lg">Customizable templates, engaging visuals, and interactive slides—all in minutes.</p>
-              <p className="text-xl mt-6 text-presly-text">Focus on your ideas. <span className="text-presly-accent">Presly</span> handles the rest.</p>
+              <p className="text-xl mt-6 text-presly-text">Focus on your ideas. <span className="text-presly-accent font-copper font-bold">Presly</span> handles the rest.</p>
             </div>
           </div>
 
